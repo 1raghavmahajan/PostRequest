@@ -17,22 +17,20 @@ import java.util.Map;
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 
-public class PostRequest {
+class PostRequest {
 
     private static final String TAG = PostRequest.class.getSimpleName() + " YOYO";
 
-    public static final String ACTION_RESULT = "com.BlackBox.app.ACTION_RESULT";
+    private String url;
+    private Map<String, String> params;
 
-    String url;
-    Map<String, String> params;
-
-    public PostRequest(Map<String, String> params, String url) {
+    PostRequest(Map<String, String> params, String url) {
 
         this.url = url;
         this.params = params;
     }
 
-    public void send(final Context context) {
+    void send(final Context context) {
 
         // Tag used to cancel the request
         String request_Tag = "POST_REQUEST";
@@ -58,57 +56,22 @@ public class PostRequest {
                             public void onErrorResponse(VolleyError error) {
                                 //VolleyLog.d(TAG, "onErrorResponse: " + error.getMessage());
                                 Toast.makeText(context, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
-                                //Intent i = new Intent(ACTION_RESULT);
-                                //i.putExtra("resultStatus", false);
-                                //context.sendBroadcast(i);
                             }
                         }
                 ) {
             @Override
             protected Map<String, String> getParams() {
-
                 return params;
             }
 
             @Override
             public void deliverError(final VolleyError error) {
 
-                //Intent i = new Intent(ACTION_RESULT);
-
-                String mess_str = "Unknown deliveryError";
-                /*if (error != null) {
-                    //Log.i(TAG, "Error details: " + error.toString());
-                    if (error.toString().contains("Timeout")) {
-                        mess_str = "Authentication server not reachable. Please try after some time.";
-                    } else if (error.toString().contains("NoConnectionError")) {
-                        mess_str = "No Connection. Please try after some time.";
-                    } else {
-                        if (error.networkResponse != null) //network response
-                        {
-                            final int status = error.networkResponse.statusCode;
-                            //Log.i(TAG, "Status : " + status);
-                            // Handle 30x
-                            if (HttpURLConnection.HTTP_MOVED_PERM == status || status == HttpURLConnection.HTTP_MOVED_TEMP || status == HttpURLConnection.HTTP_SEE_OTHER) {
-                                final String location = error.networkResponse.headers.get("Location");
-
-                                if (location.contains("bing")) {
-                                    mess_str = "Successfully Authenticated!";
-                                    i.putExtra("resultStatus", true);
-                                } else {
-                                    mess_str = "Invalid Credentials Provided.";
-                                }
-                            }
-                        } else {
-                            mess_str = "No Network response";
-                        }
-                    }
-                }*/
-                //Log.i("YOYO", "Message for noobs: " + mess_str);
                 if (error != null)
                     Log.i(TAG, "Error details: " + error.toString());
 
-                Toast.makeText(context, mess_str, Toast.LENGTH_SHORT).show();
-                //context.sendBroadcast(i);
+                Toast.makeText(context, "Unknown deliveryError", Toast.LENGTH_SHORT).show();
+
             }
 
         };
