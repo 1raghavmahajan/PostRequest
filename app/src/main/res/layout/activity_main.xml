@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.blackbox.app.postrequest.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Key"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/tV_key"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="60dp"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        app:layout_constraintTop_toBottomOf="@+id/tV_key"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/eT_key1"
+        android:layout_margin="5dp"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        app:layout_constraintTop_toBottomOf="@+id/eT_key1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/eT_key2"
+        android:layout_margin="5dp"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        app:layout_constraintTop_toBottomOf="@+id/eT_key2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/eT_key3"
+        android:layout_margin="5dp"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        app:layout_constraintTop_toBottomOf="@+id/eT_key3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/eT_key4"
+        android:layout_margin="5dp"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Value"
+        android:textSize="25sp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/tV_Value"
+        android:layout_marginRight="60dp"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        app:layout_constraintTop_toBottomOf="@+id/tV_Value"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="5dp"
+        android:id="@+id/eT_Value1"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        app:layout_constraintTop_toBottomOf="@+id/eT_Value1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="5dp"
+        android:id="@+id/eT_Value2"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        app:layout_constraintTop_toBottomOf="@+id/eT_Value2"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="5dp"
+        android:id="@+id/eT_Value3"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="8"
+        app:layout_constraintTop_toBottomOf="@+id/eT_Value3"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="5dp"
+        android:id="@+id/eT_Value4"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eT_key4"
+        android:layout_margin="15dp"
+        android:hint="Url"
+        android:textAlignment="center"
+        android:id="@+id/eT_url"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eT_url"
+        android:text="Send"
+        android:id="@+id/btn_submit"
+
+        android:onClick="sendPost"/>
+
+
+
+
+</android.support.constraint.ConstraintLayout>
